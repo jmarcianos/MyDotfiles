@@ -56,7 +56,8 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+#bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec "dmenu_run -nf '#E6E6EA' -nb '#222222' -sb '#0CF574' -sf '#0D1321' -fn 'monospace-10' -p 'dmenu: '"
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -192,6 +193,17 @@ bar {
 	padding 2px
 	separator_symbol ":|:"
 	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+	colors {
+   		 background #0D1321
+   		 statusline #E6E6EA
+   		 separator  #E6E6EA
+
+   		 focused_workspace  #426A5A #0CF574 #0D1321
+   		 active_workspace   #0CF574 #426A5A #E6E6EA
+   		 inactive_workspace #0CF574 #426A5A #E6E6EA
+   		 urgent_workspace   #0CF574 #900000 #E6E6EA
+   	 binding_mode       #0CF574 #900000 #E6E6EA
+ 	 }
 }
 
 #gaps
@@ -200,8 +212,17 @@ gaps outer 2
 
 #windows border
 for_window [class="^.*"] border pixel 2
-new_window 1pixel
+new_window pixel 1
 
+#Colors
+# class                 border  bground text    indicator child_border
+client.focused          #0CF574 #0CF574 #0D1321 #0CF574   #0CF574
+client.focused_inactive #837569 #837569 #E6E6EA #837569   #837569
+client.unfocused        #426A5A #426A5A #E6E6EA #426A5A   #426A5A
+client.urgent           #900000 #900000 #FFFFFF #900000   #900000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+
+client.background       #0D1321
 
 ## Exec
 exec --no-startup-id telegram-desktop
