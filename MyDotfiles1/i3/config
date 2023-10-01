@@ -195,8 +195,8 @@ bar {
 	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 	colors {
    		 background #0D1321
-   		 statusline #E6E6EA
-   		 separator  #E6E6EA
+   		 statusline #0CF574
+   		 separator  #436A5A
 
    		 focused_workspace  #426A5A #0CF574 #0D1321
    		 active_workspace   #0CF574 #426A5A #E6E6EA
@@ -227,6 +227,7 @@ client.background       #0D1321
 ## Exec
 exec --no-startup-id telegram-desktop
 exec --no-startup-id whatsapp-for-linux
+exec --no-startup-id picom
 
 #Bindsym
 bindsym Mod1+Ctrl+f exec --no-startup-id flameshot 
