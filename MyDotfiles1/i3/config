@@ -50,7 +50,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -191,7 +191,7 @@ bar {
         status_command i3status
 	position top
 	padding 2px
-	separator_symbol ":|:"
+	separator_symbol "|"
 	font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 	colors {
    		 background #0D1321
