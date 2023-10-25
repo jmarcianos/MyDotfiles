@@ -39,7 +39,7 @@ set $refresh_i3status killall -SIGUSR1 i3status
 bindsym Mod1+Ctrl+Up  exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym Mod1+Ctrl+Down exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym Mod1+Ctrl+Left exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym Mod1+Ctrl+Right exec --no-startup-id pavucontrol
+bindsym Mod1+Ctrl+Right exec --no-startup-id xfce4-terminal -e alsamixer
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -212,7 +212,6 @@ gaps outer 2
 
 #windows border
 for_window [class="^.*"] border pixel 2
-new_window pixel 1
 
 #Colors
 # class                 border  bground text    indicator child_border
@@ -226,7 +225,7 @@ client.background       #0D1321
 
 ## Exec
 exec --no-startup-id telegram-desktop
-exec --no-startup-id whatsapp-for-linux
+exec --no-startup-id whatsapp-desktop
 exec --no-startup-id picom
 
 #Bindsym
